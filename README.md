@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>N.Nithiyanandan</H3> 
+<H3>212222230099</H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>29/02/2024</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -37,11 +37,62 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+df=pd.read_csv("/content/Churn_Modelling.csv", index_col="RowNumber")
+df
+df.drop(['CustomerId'],axis=1,inplace=True)
+df.drop(['Surname'],axis=1,inplace=True)
+df.drop('Age',axis=1,inplace=True)
+df.drop('Geography',axis=1,inplace=True)
+df.drop('Gender',axis=1,inplace=True)
+df
+df.isnull().sum()
+df.duplicated()
+df.describe()
+scaler=StandardScaler()
+df1=pd.DataFrame(scaler.fit_transform(df))
+df1
+x=df1.iloc[:,:-1].values
+x
+y=df1.iloc[:,-1].values
+y
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
+print(x_train)
+print(len(x_train))
+print(x_test)
+print(len(x_test))
 
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+### DATASET:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/501a37bf-23a9-494a-a405-338c2dd7795c)
+### DROPPING THE UNWANTED DATASET:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/ea2af879-9249-48cf-95ac-9e81c97111ca)
+### CHECKING NULL VALUES:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/049d838f-369e-4797-9343-110941640828)
+### CHECKING FOR DUPLICATION:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/78d5e594-2fef-42b5-8f15-a94ad364912b)
+### DESCRIBING THE DATASET:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/8d224a54-ea26-4d53-84d6-75e8aecf1cdb)
+### SCALING THE DATASET:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/4d990b2a-d948-485f-828f-e76cc6d0a9d6)
+### X FEATURES:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/6134cc36-30af-4210-9fca-3307177c9a05)
+### Y FEATURES:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/f1f9d7dc-73a8-42f0-b000-43fe0713c330)
+### SPLITTING THE TRAINING AND TESTING DATASET:
+![image](https://github.com/NITHIYANANDAN278/Ex-1-NN/assets/121784636/ea18beb2-8cf0-4ebd-b229-36e037da149c)
+
+
+
+
+
+
+
+
 
 
 ## RESULT:
