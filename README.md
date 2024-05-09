@@ -1,5 +1,5 @@
-<H3>N.Nithiyanandan</H3> 
-<H3>212222230099</H3>
+<H3> NAME:N.Nithiyanandan</H3> 
+<H3> REG NO:212222230099</H3>
 <H3>EX. NO.1</H3>
 <H3>29/02/2024</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
@@ -37,6 +37,7 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
+```
 import pandas as pd
 import io
 from sklearn.preprocessing import StandardScaler
@@ -64,6 +65,7 @@ print(x_train)
 print(len(x_train))
 print(x_test)
 print(len(x_test))
+```
 
 
 ## OUTPUT:
